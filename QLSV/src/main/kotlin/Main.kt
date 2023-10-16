@@ -45,5 +45,53 @@ class ThiSinh(cccd: String, hoTen: String, toan: Float, ly: Float, hoa: Float, v
 }
 
 fun main() {
-   
+    // Nhập danh sách thí sinh
+    val danhSachThiSinh = mutableListOf<ThiSinh>()
+
+    var soLuongThiSinh: Int
+    do {
+        print("Nhập số lượng thí sinh: ")
+        soLuongThiSinh = readLine()!!.toInt()
+        if (soLuongThiSinh <= 0) {
+            println("Số lượng thí sinh phải là số dương. Vui lòng nhập lại.")
+        }
+    } while (soLuongThiSinh <= 0)
+    for (i in 1..soLuongThiSinh) {
+        val thiSinh = ThiSinh()
+        println("Nhập thông tin thí sinh $i:")
+        print("Số CCCD: ")
+        thiSinh.cccd = readLine()!!
+        print("Họ tên: ")
+        thiSinh.hoTen = readLine()!!
+        print("Điểm Toán: ")
+        thiSinh.toan = readLine()!!.toFloat()
+        print("Điểm Lý: ")
+        thiSinh.ly = readLine()!!.toFloat()
+        print("Điểm Hóa: ")
+        thiSinh.hoa = readLine()!!.toFloat()
+        print("Điểm Văn: ")
+        thiSinh.van = readLine()!!.toFloat()
+        print("Điểm Anh: ")
+        thiSinh.anh = readLine()!!.toFloat()
+        print("Khối thi: ")
+        thiSinh.khoiThi = readLine()!!
+        danhSachThiSinh.add(thiSinh)
+        println()
+    }
+
+    // Sắp xếp danh sách thí sinh theo họ tên từ điển
+    danhSachThiSinh.sortBy { it.hoTen }
+
+    // Nhập vào điểm chuẩn
+    print("Nhập điểm chuẩn: ")
+    val diemChuan = readLine()!!.toFloat()
+
+    // Hiển thị thông tin thí sinh trúng tuyển
+    println("\nThông tin thí sinh trúng tuyển:")
+    for (thiSinh in danhSachThiSinh) {
+        if (thiSinh.tinhTongDiem() >= diemChuan) {
+            thiSinh.hienThiThongTin()
+            println()
+        }
+    }
 }

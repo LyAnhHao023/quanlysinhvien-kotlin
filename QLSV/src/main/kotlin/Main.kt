@@ -1,7 +1,26 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+class ThiSinh(cccd: String, hoTen: String, toan: Float, ly: Float, hoa: Float, van: Float, anh: Float, khoiThi: String) {
+    var cccd: String = ""
+    var hoTen: String = ""
+    var toan: Float = 0f
+    var ly: Float = 0f
+    var hoa: Float = 0f
+    var van: Float = 0f
+    var anh: Float = 0f
+    var khoiThi: String = ""
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+    init {
+        this.cccd = cccd
+        this.hoTen = hoTen
+        this.toan = toan
+        this.ly = ly
+        this.hoa = hoa
+        this.van = van
+        this.anh = anh
+        this.khoiThi = khoiThi
+    }
+
+}
+
+fun main() {
+   
 }

@@ -18,6 +18,21 @@ class ThiSinh(cccd: String, hoTen: String, toan: Float, ly: Float, hoa: Float, v
         this.anh = anh
         this.khoiThi = khoiThi
     }
+    fun soSanhTen(thiSinh: ThiSinh): Int {
+        return hoTen.compareTo(thiSinh.hoTen)
+    }
+
+    fun hienThiThongTin() {
+        println("Thông tin thí sinh:")
+        println("Số CCCD: $cccd")
+        println("Họ tên: $hoTen")
+        println("Điểm Toán: $toan")
+        println("Điểm Lý: $ly")
+        println("Điểm Hóa: $hoa")
+        println("Điểm Văn: $van")
+        println("Điểm Anh: $anh")
+        println("Khối thi: $khoiThi")
+    }
 
 }
 

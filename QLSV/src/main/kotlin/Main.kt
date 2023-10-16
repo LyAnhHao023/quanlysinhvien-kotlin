@@ -18,6 +18,14 @@ class ThiSinh(cccd: String, hoTen: String, toan: Float, ly: Float, hoa: Float, v
         this.anh = anh
         this.khoiThi = khoiThi
     }
+    fun tinhTongDiem(): Float {
+        return when (khoiThi) {
+            "A00" -> (toan + ly + hoa)
+            "A01" -> (toan + ly + anh)
+            "A02" -> (toan + van + anh)
+            else -> 0f
+        }
+    }
     fun soSanhTen(thiSinh: ThiSinh): Int {
         return hoTen.compareTo(thiSinh.hoTen)
     }
